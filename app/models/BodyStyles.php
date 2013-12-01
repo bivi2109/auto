@@ -16,4 +16,13 @@ class BodyStyles extends \Phalcon\Mvc\Model
      */
     public $title;
      
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+		$this->hasMany("id", "Ads", "body_style_id", NULL);
+
+    }
+
 }

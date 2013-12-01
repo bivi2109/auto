@@ -22,4 +22,13 @@ class Colors extends \Phalcon\Mvc\Model
      */
     public $hash;
      
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+		$this->hasMany("id", "Ads", "color_id", NULL);
+
+    }
+
 }

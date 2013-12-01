@@ -94,4 +94,20 @@ class Ads extends \Phalcon\Mvc\Model
      */
     public $color_id;
      
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+		$this->hasMany("id", "Comments", "ads_id", NULL);
+		$this->belongsTo("brand_id", "VehicleBrands", "id", NULL);
+		$this->belongsTo("make_id", "VehicleMake", "id", NULL);
+		$this->belongsTo("owner_id", "Users", "id", NULL);
+		$this->belongsTo("transmission_id", "VehicleTransmission", "id", NULL);
+		$this->belongsTo("body_style_id", "BodyStyles", "id", NULL);
+		$this->belongsTo("color_id", "Colors", "id", NULL);
+		$this->belongsTo("city_id", "Cities", "id", NULL);
+
+    }
+
 }

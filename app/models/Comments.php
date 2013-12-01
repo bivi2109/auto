@@ -40,4 +40,14 @@ class Comments extends \Phalcon\Mvc\Model
      */
     public $user_id;
      
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+		$this->belongsTo("ads_id", "Ads", "id", NULL);
+		$this->belongsTo("user_id", "Users", "id", NULL);
+
+    }
+
 }

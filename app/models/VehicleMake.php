@@ -22,4 +22,14 @@ class VehicleMake extends \Phalcon\Mvc\Model
      */
     public $title;
      
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+		$this->hasMany("id", "Ads", "make_id", NULL);
+		$this->belongsTo("brand_id", "VehicleBrands", "id", NULL);
+
+    }
+
 }

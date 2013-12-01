@@ -16,4 +16,13 @@ class VehicleTransmission extends \Phalcon\Mvc\Model
      */
     public $title;
      
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+		$this->hasMany("id", "Ads", "transmission_id", NULL);
+
+    }
+
 }

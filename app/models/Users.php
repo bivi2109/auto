@@ -65,4 +65,14 @@ class Users extends \Phalcon\Mvc\Model
         }
     }
 
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+		$this->hasMany("id", "Ads", "owner_id", NULL);
+		$this->hasMany("id", "Comments", "user_id", NULL);
+
+    }
+
 }
